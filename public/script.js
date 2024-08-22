@@ -3,7 +3,9 @@ const tmdbBaseUrl = 'https://api.themoviedb.org/3/movie/550?api_key=';
 const playBtn = document.getElementById('playBtn');
 
 const getGenres = () => {
-
+    const genreRequestEndpoint = 'https://api.themoviedb.org/3/genre/movie/list'
+    const requestParams = `?api_key=${tmdbKey}`;
+    const urlToFetch = `${tmdbBaseUrl} ${genreRequestEndpoint} ${requestParams}`;
 };
 
 const getMovies = () => {
