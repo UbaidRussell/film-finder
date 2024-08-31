@@ -7,7 +7,15 @@ const getGenres = async () => {
     const requestParams = `?api_key=${tmdbKey}`;
     const urlToFetch = `${tmdbBaseUrl} ${genreRequestEndpoint} ${requestParams}`;
 
-    
+    try{
+        const response = await fetch(urlToFetch);
+        if (response.ok) {
+            const jsonResponse = await response.json();
+        }
+    } catch(error) {
+        console.log(error);
+    }
+
 };
 
 const getMovies = () => {
