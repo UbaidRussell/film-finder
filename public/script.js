@@ -1,9 +1,9 @@
 const tmdbKey = '74890179d22c12692a9dbd9a72bdf43d';
-const tmdbBaseUrl = 'https://api.themoviedb.org/3/movie/550?api_key=';
+const tmdbBaseUrl = 'https://api.themoviedb.org/3';
 const playBtn = document.getElementById('playBtn');
 
 const getGenres = async () => {
-    const genreRequestEndpoint = 'https://api.themoviedb.org/3/genre/movie/list'
+    const genreRequestEndpoint = '/genre/movie/list'
     const requestParams = `?api_key=${tmdbKey}`;
     const urlToFetch = `${tmdbBaseUrl} ${genreRequestEndpoint} ${requestParams}`;
 
@@ -11,6 +11,11 @@ const getGenres = async () => {
         const response = await fetch(urlToFetch);
         if (response.ok) {
             const jsonResponse = await response.json();
+            console.log(jsonResponse);
+
+            const genres = jsonResponse.genres;
+            console.log(genres);
+            return genres;
         }
     } catch(error) {
         console.log(error);
