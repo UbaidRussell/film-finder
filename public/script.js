@@ -24,12 +24,12 @@ const getGenres = async () => {
 
 };
 
-const getMovies = () => {
+const getMovies = async () => {
   const selectedGenre = getSelectedGenre();
   const discoverMovieEndpoint = '/3/discover/movie'
   const requestParams = `?api_key=${tmdbKey}&with_genre=${selectedGenre}`
   const urlToFetch = `${tmdbBaseUrl}${discoverMovieEndpoint}${requestParams}`
-  
+
 };
 
 const getMovieInfo = () => {
