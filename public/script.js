@@ -30,6 +30,15 @@ const getMovies = async () => {
   const requestParams = `?api_key=${tmdbKey}&with_genre=${selectedGenre}`
   const urlToFetch = `${tmdbBaseUrl}${discoverMovieEndpoint}${requestParams}`
 
+  try{
+  const response = await fetch(urlToFetch)
+  if(response.ok){
+    
+  }
+  } catch(error){
+
+  }
+
 };
 
 const getMovieInfo = () => {
