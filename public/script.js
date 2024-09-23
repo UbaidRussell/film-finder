@@ -12,10 +12,7 @@ const getGenres = async () => {
   const response = await fetch(urlToFetch)
   if (response.ok){
     const jsonResponse = await response.json()
-    console.log(jsonResponse)
-    
     const genres = jsonResponse.genres;
-    console.log(genres)
     return genres;
   }
  } catch(error) {
@@ -34,15 +31,14 @@ const getMovies = async () => {
   const response = await fetch(urlToFetch)
     if(response.ok){
       const jsonResponse = await response.json()
-      console.log(jsonResponse)
+      const movies = jsonResponse.results;
+      return movies
     }
   } catch(error){
     console.log(error)
   }
 
 };
-
-getMovies()
 
 const getMovieInfo = () => {
 
