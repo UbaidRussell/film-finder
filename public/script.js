@@ -43,7 +43,9 @@ const getMovies = async () => {
 const getMovieInfo = () => {
   const movieId = movie.id;
   const movieEndpoint = `/movie/${movieId}`
-
+  const requestParams = `?api_key=${tmdbKey}`
+  const urlToFetch = `${tmdbBaseUrl}${movieEndpoint}${requestParams}`
+  
 };
 
 // Gets a list of movies and ultimately displays the info of a random movie from the list
